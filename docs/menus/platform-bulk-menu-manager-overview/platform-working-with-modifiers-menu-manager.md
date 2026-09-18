@@ -1,0 +1,448 @@
+---
+title: Working with modifiers
+excerpt: >-
+  Modifier groups contain individual modifiers that allow guests to customize
+  their orders. For example, a Dinner Salad menu item might have a Salad
+  Dressing modifier group that…
+hidden: false
+metadata:
+  description: >-
+    Modifier groups contain individual modifiers that allow guests to customize
+    their orders. For example, a Dinner Salad menu item might have a Salad
+    Dressing modifier group that…
+---
+
+Modifier groups contain individual modifiers that allow guests to customize their orders. For example, a Dinner Salad menu item might have a Salad Dressing modifier group that contains modifiers such as Blue Cheese and Ranch.
+
+To add and customize the modifiers in a modifier group, you use the **Modifiers** section of a modifier group's side pane:
+
+![A modifier group details page with the Modifiers section displayed.](https://doc.toasttab.com/doc/media/menu-manager-modifiers-table.png)
+
+Here are some important points to keep in mind when working with modifiers:
+
+- To reduce the number of modifiers you have to manage, [add existing modifiers](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformAddingAnExistingModifierToAModifierGroupMenuManager) to modifier groups whenever possible instead of creating new ones. For example, a Breakfast Sides modifier group and a Burger Toppings modifier group could share a Bacon modifier.
+- If a modifier is used by more than one modifier group:
+
+   - When you edit the modifier, it is edited for all the modifier groups that use it.
+   - When you remove the modifier from one of the modifier groups, the other modifier groups continue to use it.
+- You must add at least one modifier to a modifier group before you can save the group.
+
+### Understanding a modifier item reference
+
+In the [classic menu configuration experience](https://doc.toasttab.com/doc/platformguide/adminMenuManagerAndTheClassicMenuDetailsPages.html), you can base a modifier on an existing menu item. For example, a Fries menu item can function as a normal menu item but also as the item reference for a Fries modifier. For this reason, all modifiers are supported by an underlying menu item, called the modifier's *item reference*. Item references have all the configuration settings of a normal menu item such as name, POS button color, pricing, and so on.
+
+When you create a new modifier that is *not based on* an existing menu item, the Toast platform automatically creates an item reference for it. This maintains the same underlying structure for both modifiers based on existing menu items and modifiers that are not based on existing menu items. This section uses the term *stand-alone modifier* for a modifier that is not based on an existing menu item.
+
+> 📘 Note
+>
+> The menu manager currently only supports creating stand-alone modifiers but you can see and edit any modifiers that have been created using the classic experience, including both stand-alone modifiers and modifiers based on existing menu items.
+
+When a modifier is based on an existing menu item, you can choose to use the price of the underlying menu item as the price of the modifier, or you can override that price with a price that is specific to the modifier. For example, the price of the Fries menu item could be $8 while the override price of the Fries modifier is $5.
+
+For stand-alone modifiers, the price you specify when creating the modifier becomes the price of the underlying item reference that the Toast platform creates.
+
+The same is true for the modifier's name. For a modifier based on an existing menu item, you can use the name of the underlying item reference or you can specify an override name for the modifier. If you create a stand-alone modifier, the name you provide becomes the name of the underlying item reference.
+
+Whichever price is in effect, either the item reference price or an override price, that's the price you see and edit in:
+
+- The **Modifiers** section of the modifier group side pane in **Full menu** view.
+- The **Edit modifier** dialog you access by selecting the name of a modifier in the **Modifiers** section of the modifier group side pane.
+- The **Price** column in **Modifiers** view.
+
+The same is true for the name field.
+
+You must have the **4. Restaurant Admin > 4.5 Edit Full Menu** permission to create override names and prices.
+
+**To access a modifier's item reference**
+
+1. Do one of the following to open the modifier's classic details page:
+
+   - In **Modifiers** view, use the search and filter controls to locate the modifier, then select its name.
+   - In **Full menu** view, select a modifier group to display its side pane, scroll to the **Modifiers** section, and select the modifier's name to open the **Edit modifier** dialog. In the **Edit modifier** dialog, select **More modifier settings**.
+
+   The modifier's classic details page opens.
+
+   > 📘 Note
+   >
+   > For multi-location restaurants, if a modifier is [versioned](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly), you see a single row in the **Modifiers** table and the version that has the highest target is displayed. It is this highest-targeted version that you see in the **Edit modifier** dialog. Selecting the **More modifier settings** opens the classic modifier details page for this highest version. For information on opening the classic modifier details pages for the other versions, see [Versioned modifiers (multi-location only)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly).
+2. Select **Edit Item**. The modifier's item reference page opens.
+
+   From the item reference page, you can set the item reference name and price. This includes setting advanced pricing strategies for the item reference like menu-specific or location-specific pricing. For information on advanced pricing strategies, see [Pricing strategies overview](https://doc.toasttab.com/doc/platformguide/adminPricingStrategiesOverview.html).
+3. If you make any changes to the item reference, select **Save** at the top of the page.
+4. When you are ready to make your changes visible to employees and guests, you must publish them. Follow the instructions below for your scenario:
+
+   - If you have a single location, select **Publish now**.
+   - If you have multiple locations, select the **Unpublished changes** link at the top of the page to go to the **Toast account > Publishing > Publish Config** page. Follow the instructions in [Publishing changes for multiple locations](https://doc.toasttab.com/doc/platformguide/publishingChangesForMultipleLocations.html) to publish changes to all or some of your locations.
+
+      > 📘 Note
+      >
+      > The **Publish now** prompt that appears when you edit configuration pages in Toast Web publishes changes to the [session restaurant](https://doc.toasttab.com/doc/platformguide/sessionRestaurant.html) only. To publish to multiple locations, you must use the **Publish Config** page.
+
+**To specify an override name or price for a modifier**
+
+> 📘 Note
+>
+> You must have the **4. Restaurant Admin > 4.5 Edit Full Menu** permission to create override names and prices.
+
+1. Do one of the following to open the modifier's classic details page:
+
+   - In **Modifiers** view, use the search and filter controls to locate the modifier, then select its name.
+   - In **Full menu** view, select a modifier group to display its side pane, scroll to the **Modifiers** section, and select **Edit** from the modifier's overflow menu (...) to open the **Edit modifier** dialog. In the **Edit modifier** dialog, select **More modifier settings**.
+
+   The modifier's classic details page opens.
+
+   ![An example of the classic modifier details page.](https://doc.toasttab.com/doc/media/menu-manager-classic-modifier-details-page-example.png)
+
+   > 📘 Note
+   >
+   > For multi-location restaurants, if a modifier is [versioned](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly), you see a single row in the **Modifiers** table and the version that has the highest target is displayed. It is this highest-targeted version that you see in the **Edit modifier** dialog. Selecting the **More modifier settings** opens the classic modifier details page for this highest version. For information on opening the classic modifier details pages for the other versions, see [Versioned modifiers (multi-location only)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly).
+2. To enter an override name, enter the name in the **Modifier name** field.
+3. To enter an override price, set the **Override item price** option to **Yes** and enter a price in the **Modifier-specific price** field. Override prices are always base prices.
+4. At the top of the page, select **Save**.
+5. When you are ready to make your changes visible to employees and guests, you must publish them. Follow the instructions below for your scenario:
+
+   - If you have a single location, select **Publish now**.
+   - If you have multiple locations, select the **Unpublished changes** link at the top of the page to go to the **Toast account > Publishing > Publish Config** page. Follow the instructions in [Publishing changes for multiple locations](https://doc.toasttab.com/doc/platformguide/publishingChangesForMultipleLocations.html) to publish changes to all or some of your locations.
+
+      > 📘 Note
+      >
+      > The **Publish now** prompt that appears when you edit configuration pages in Toast Web publishes changes to the [session restaurant](https://doc.toasttab.com/doc/platformguide/sessionRestaurant.html) only. To publish to multiple locations, you must use the **Publish Config** page.
+
+### Versioned modifiers (multi-location only)
+
+Modifiers can be versioned using the **New Version** button on their classic details pages. For example, you could have a Fries modifier targeted at a Corporate location group that uses an [override price](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformToSpecifyAnOverrideNameOrPriceForAModifier) of $7 and another version of that modifier targeted at Boston that uses an override price of $9.
+
+![The location of the New Version button on the classic modifier details page.](https://doc.toasttab.com/doc/media/menu-manager-classic-modifier-details-page-new-version-button.png)
+
+If a modifier is versioned, you see a row for each version in **Modifiers** view, assuming you are viewing all locations (if you are not viewing all locations then you see the versions associated with the locations you have chosen to view).
+
+![An example of Modifiers view showing multiple rows for a versioned modifier.](https://doc.toasttab.com/doc/media/menu-manager-versioned-modifier-modifiers-view.png)
+
+The same is true for the menu hierarchy table in **Full menu** view, you see a row for each version in the menu hierarchy table, depending on which locations you have chosen to view.
+
+![An example of Full menu view showing multiple rows for a versioned modifier.](https://doc.toasttab.com/doc/media/menu-manager-versioned-modifier-hierarchy-table.png)
+
+The **Modifiers** table you see in the modifier group side pane, however, behaves differently.
+
+![An example of Full menu view showing multiple rows for a versioned modifier.](https://doc.toasttab.com/doc/media/menu-manager-versioned-modifier-side-pane.png)
+
+If a modifier is versioned, you see a single row for that modifier in the **Modifiers** table on the modifier group side pane. The version that has the highest target is displayed in the row, along with its price if the modifier group is [priced individually](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifierGroupsMenuManager.html#platformSpecifyingHowModifiersInAGroupArePricedMenuManager). For example, consider the following location group hierarchy:
+
+- Corporate
+
+   - Northeast
+
+      - Boston
+      - New York City
+
+If the modifier has versions targeted at Corporate and Northeast, then the Corporate version is shown in the **Modifiers** table.
+
+If you edit a versioned modifier in the **Modifiers** table, you are only editing the highest-targeted version. If you select the name of a versioned modifier in the **Modifiers** table, the **Edit modifier** dialog that appears also only affects the highest-targeted version.
+
+If you need to edit a modifier version that doesn't appear in the **Modifiers** table, you can use **Modifiers** view instead, which has columns for setting the modifier version's price and visibility. To edit other settings, select the name of a modifier version in **Modifiers** view to open its classic modifier details page. From the classic modifier details page, you can also select **Edit Item** to access the modifier's [item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager) page where you can set additional properties.
+
+### Creating a new modifier
+
+Follow the instructions below to create new modifiers for a modifier group.
+
+For multi-location restaurants:
+
+- Newly created modifiers inherit the target and owner of their parent modifier group by default. For more information, see [Defaults for targets and owners](https://doc.toasttab.com/doc/platformguide/platformMenuManagerMenuAndMultiLocationRestaurants.html#platformMenuManagerDefaultsForTargetsAndOwners).
+- You must have the **Edit Full Menu** permission to the owner of a modifier group in order to create a new modifier for it.
+
+**To create new modifiers for a modifier group**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to add a modifier to.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. Select **+ Add modifier** and enter a name for the modifier. A dropdown list appears that has a **Create new** option followed by a list of any existing modifiers that match the text you entered.
+8. After you are done entering the modifier name, select the **Create new** option (alternatively, you can press the **Enter** key).
+9. If your modifiers are [priced individually](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifierGroupsMenuManager.html#platformSpecifyingHowModifiersInAGroupArePricedMenuManager), the **Modifiers** table has a **Price** column where you can enter a price for each modifier you create.
+
+   > 📘 Note
+   >
+   > If you enter a minus sign before a modifier's price, the value you enter is deducted from the menu item's price. Consider using this method if a guest wants to remove a costly ingredient such as meat from a pizza or salad.
+10. Select **Save**.
+11. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+### Adding an existing modifier to a modifier group
+
+To reduce the number of modifiers you have to manage, add existing modifiers whenever possible instead of creating new ones. For example, a Breakfast Sides modifier group and a Burger Toppings modifier group could share a Bacon modifier.
+
+If a modifier is used by more than one modifier group, keep in mind that:
+
+- When you edit the modifier, it is edited for all the modifier groups that use it.
+- When you remove the modifier from one of the modifier groups, the other modifier groups continue to use it.
+
+For multi-location restaurants, you must have the **Edit Full Menu** permission to the owner of a modifier group in order to add an existing modifier to it.
+
+**To add an existing modifier to a modifier group**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate and expand the modifier group you want to add an existing modifier to.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. Select **+ Add modifier** and enter a name for the modifier. A dropdown list appears that has a **Create new** option followed by a list of any existing modifiers that match the text you entered.
+8. Select the existing modifier you want to add from the dropdown menu. Alternatively, use the down arrow to highlight the existing modifier and then press the **Enter** key. The modifier is added to the **Modifiers** table.
+
+   If you have a multi-location restaurant:
+
+   - The dropdown list of matching modifiers is filtered so that you only see modifiers that both match the text you enter and have a target that is the same as the parent modifier group's target, or an ancestor or descendant of the parent modifier group's target. This ensures that the target of the modifier is compatible with the target of its parent modifier group.
+   - If the existing modifier is [versioned](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly), you see a single row in the **Modifiers** table and it displays the version with the highest target. For more information, see [Versioned modifiers (multi-location only)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly).
+9. Select **Save**.
+10. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+### Editing a modifier's details
+
+The **Modifiers** table in the modifier group side pane displays names and prices for the modifiers contained in the group (the **Price** column only appears if the modifiers in the group are [priced individually](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifierGroupsMenuManager.html#platformSpecifyingHowModifiersInAGroupArePricedMenuManager)). To set other details for a modifier, such as button color and calories, you open its **Edit modifier** dialog by selecting the modifier's name in the **Modifiers** table.
+
+> 📘 Note
+>
+> To fully understand and edit a modifier, you should understand the concept of a modifier item reference. For more information, see [Understanding a modifier item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager).
+
+For multi-location restaurants:
+
+- If a modifier is [versioned](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly), you see a single row in the **Modifiers** table and it displays the version with the highest target. It is this highest-targeted version that you can see and edit in the **Edit modifier** dialog. To edit the other versions, you must go to their classic details pages. For more information, see [Versioned modifiers (multi-location only)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly).
+
+**To set other details for a modifier**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to edit.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. Select a modifier's name.
+
+   The **Edit modifier** dialog opens.
+
+   ![The Edit modifier dialog.](https://doc.toasttab.com/doc/media/menu-manager-mod-option-details.png)
+8. In the **Edit modifier** dialog, you can:
+
+   - Edit the modifier's name.
+
+      The name you see and edit here is either the modifier's item reference name or its override name, if one exists. For more information, see [Understanding a modifier item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager).
+   - Enter the number of calories for the modifier. If you enter a minus sign before a modifier's calorie value, the amount you enter is deducted from the menu item's calorie value. For example, for a No Cheese modifier, you could use the minus sign to deduct the cheese calories from the menu item.
+   - Specify a POS button color by selecting the **POS button color** option and then selecting a color from the color palette.
+   - View or edit the modifier's price:
+
+      If the modifier [inherits its price](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifierGroupsMenuManager.html#platformSpecifyingHowModifiersInAGroupArePricedMenuManager) from its parent modifier group, you can view the price but you can't edit it. You must edit the price from the **Pricing** section of the modifier group's side pane instead.
+
+      If the modifier is [priced individually](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifierGroupsMenuManager.html#platformSpecifyingHowModifiersInAGroupArePricedMenuManager) and uses a base price, you can edit the price in the **Modifier price** field. The price you see and edit here is either the modifier's item reference price or its override price, if one exists. For more information, see [Understanding a modifier item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager).
+
+      If the modifier is priced individually and uses an advanced pricing strategy, you can view the advanced price but you can't edit it. To edit the advanced price, use the **More modifier settings** link to go to the modifier's classic details page. From the classic modifier details page, you can access the modifier's [item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager) page where you can set an [advanced pricing strategy](https://doc.toasttab.com/doc/platformguide/adminPricingStrategiesOverview.html) for the modifier.
+9. Select **Update** in the **Edit modifier** dialog.
+10. Select **Save** in the side pane.
+11. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+### Reordering modifiers
+
+Your Toast ordering channels display your modifiers in the order you see them in the **Full menu** view. You can reorder your modifiers so they appear in the order you want them to.
+
+For multi-location restaurants:
+
+- You must have the **Edit Full Menu** permission to the owner of a modifier group in order to change the display order of the modifiers it contains.
+- If a modifier group is versioned, you must pick the version you want to change the display order for. The display order is updated for that version only. The other versions are not updated.
+- If a modifier is versioned, all versions of that modifier are displayed in the same order within a modifier group.
+
+**To change the order of modifiers in a modifier group**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to edit.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. Select a modifier's reorder icon and drag the row to its new location.
+
+   ![The location of a modifier's reorder icon.](https://doc.toasttab.com/doc/media/menu-manager-modifiers-table-reorder.png)
+8. Select **Save**.
+9. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+### Removing a modifier from a group
+
+When you remove a modifier from a modifier group, the modifier no longer appears in that modifier group, but the modifier remains in your Toast Web database and can still be added to or used by other modifier groups.
+
+If the modifier belongs to multiple modifier groups, removing the modifier from one group has no effect on the others. They continue to use the modifier.
+
+Modifier groups require at least one modifier, so the Toast platform prevents you from removing a modifier if it is the only one in the modifier group.
+
+> 📘 Note
+>
+> To remove a modifier from *all* modifier groups that use it, you must archive it using the modifier's classic details page.
+
+For multi-location restaurants:
+
+- You must have the **Edit Full Menu** permission to the owner of a modifier group in order to remove a modifier from it. For example, consider a Cheese modifier group that contains a Cheddar modifier. You must have **Edit Full Menu** permission to the owner of the Cheese modifier group to remove the Cheddar modifier from it.
+- If a modifier group is versioned and you want to remove a modifier from it, you must pick the version you want to remove the modifier from. The modifier is removed from that version only. The other versions continue to use the modifier.
+- If a modifier is versioned and you remove it from a modifier group, all versions of the modifier are removed from that group.
+
+**To remove modifiers from a modifier group**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to edit.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. Select the modifier's delete icon.
+
+   ![The location of a modifier's remove icon.](https://doc.toasttab.com/doc/media/menu-manager-modifiers-table-remove.png)
+8. Select **Save**.
+9. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+### Specifying modifier prices
+
+When you create a modifier group, you [specify how modifiers in that group are priced](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifierGroupsMenuManager.html#platformSpecifyingHowModifiersInAGroupArePricedMenuManager): no charge, all modifiers share the same price, or modifiers are priced individually. This section covers how to set prices for modifiers once you've chosen the pricing method for a modifier group.
+
+#### Modifiers priced at the group level
+
+When a modifier group is priced at the group level, all modifiers in the group use the same price. You can set a base price for the modifier group using the modifier group's side pane in the menu manager.
+
+To price modifiers at the group level, you must have **Full menu** view access. Employees with the **4. Restaurant Admin > 4.5 Edit Full Menu** permission have **Full menu** view access. Employees with the **4. Restaurant Admin > 4.14 Local Menu Edit** permission do not.
+
+**To set a base price for a modifier group**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to edit.
+6. Select the modifier group to view its side pane, then scroll to the **Pricing** section.
+7. Select **Group**.
+8. In the **Price** field, enter the base price.
+9. Select **Save**.
+10. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+To set an advanced pricing strategy for the modifier group, you use the classic modifier group details page, accessed by selecting the **More settings** link in the modifier group's side pane. Advanced price strategies include:
+
+- [Size](https://doc.toasttab.com/doc/platformguide/adminSizePrice.html): The price of the modifier changes based on the size chosen for the menu item. For example, a topping on a small pizza costs $5 and topping on a large pizza costs $10.
+- [Sequence](https://doc.toasttab.com/doc/platformguide/adminSequencePrice.html): The price of individual modifiers in a modifier group is determined by the sequence in which they are added to a menu item. For example, on a pizza menu item with a Toppings modifier group, the first topping is free, the second topping costs $5.00, the third topping costs $5.50, and all additional toppings cost $6.00.
+- [Size/sequence](https://doc.toasttab.com/doc/platformguide/adminSizeSequencePrice.html): The price of a modifier depends on the size of the menu item it is applied to and the order in which it is applied to the menu item. For example, the first topping on a small pizza is $5.00 and additional toppings are $6 while the first topping on a large pizza is $10 and additional toppings are $11.
+
+If a modifier group uses an advanced pricing strategy, the **Pricing** section in the modifier group's side pane lists the strategy and advises you to go to the classic modifier group details page to edit it.
+
+#### Individually-priced modifiers that use base prices
+
+Individually-priced modifiers that use base prices can be edited:
+
+- In **Full menu** view, using either the **Modifiers** section of the modifier group side pane, or the **Edit modifier** dialog (accessed by selecting a modifier's name in the **Modifiers** section of the modifier group side pane). You must [manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) pricing changes you make in **Full menu** view. **Full menu** view does not support scheduled publishing.
+- In **Modifiers** view, using the **Price** column. You can manually publish pricing changes you make in **Modifiers** view or [schedule them for future publishing](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html).
+
+The menu editing permissions you have determine which view you can use to edit a modifier's price:
+
+- Single-location restaurants: If you have the **4. Restaurant Admin > 4.5 Edit Full Menu** permission, you can use either **Full menu** view or **Modifiers** view to edit a modifier's price. If you have the **4. Restaurant Admin > 4.14 Local Menu Edit** permission, you must use **Modifiers** view to edit the modifier's price. Employees with the **Local Menu Edit** permission cannot see **Full menu** view.
+- Multi-location restaurants: If you have the **4. Restaurant Admin > 4.5 Edit Full Menu** permission to the [owner](https://doc.toasttab.com/doc/platformguide/ownersAndPermissions.html) of a modifier's [item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager), or an ancestor of the owner, you can use either **Full menu** view or **Modifiers** view to edit the modifier's price. If you have the **4. Restaurant Admin > 4.14 Local Menu Edit** permission to the item reference's owner, or an ancestor of that owner, you must use **Modifiers** view to edit the modifier's price. Employees with the **Local Menu Edit** permission cannot see **Full menu** view.
+
+> 📘 Note
+>
+> For more information about the **Edit Full Menu** and **Local Menu Edit** permissions, see [Permissions for editing menus](https://doc.toasttab.com/doc/platformguide/platformMenuManagerPermissions.html#platformMenuManagerMenuEditingPermissions).
+
+Follow one of the procedures below for the view you want to use when specifying a modifier's base price:
+
+- [To set a base price for a modifier using the modifier group side pane (Full menu view)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformToSetABasePriceForAModifierUsingTheModifierGroupSidePane)
+- [To set a base price for a modifier using the Edit modifier dialog (Full menu view)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformToSetABasePriceForAModifierUsingTheEditModifierDialog)
+- [To set a base price in Modifiers view](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformToSetABasePriceInModifiersView)
+
+For multi-location restaurants:
+
+- If a modifier is [versioned](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly), you see a single row for it in the **Modifiers** section of the modifier group side pane. This single row displays the name and price of the version with the highest target. It is also this highest-targeted version that you edit in the corresponding **Edit modifier** dialog.
+
+   To edit the other versions, you can use the **Price** column in **Modifiers** view or go to classic details pages for the modifier version you want to edit. For more information, see [Versioned modifiers (multi-location only)](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformVersionedModifiersMultiLocationOnly).
+
+**To set a base price for a modifier using the modifier group side pane (Full menu view)**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to edit.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. In the **Modifiers** table, enter the price for the modifier.
+8. Select **Save** in the side pane.
+9. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+**To set a base price for a modifier using the Edit modifier dialog (Full menu view)**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Full menu**.
+4. (Multi-location only) Select the locations whose menu data you want to edit from the [locations control](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringByLocation).
+5. Use the [expand icons](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingAndCustomizingTheMenuManagerViews.html#platformMenuManagerExpandingAndCollapsingRows) to locate the modifier group you want to edit.
+6. Select the modifier group to view its side pane, then scroll to the **Modifiers** section.
+7. In the **Modifiers** table, select the modifier's name to open its **Edit modifier** dialog.
+8. Enter a base price in the **Price** field.
+9. Select **Update** in the **Edit modifier** dialog.
+10. Select **Save** in the side pane.
+11. [Manually publish](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html#platformSavingChangesAndManuallyPublishingThemMenuManager) your changes when you are ready for guests and employees to see them.
+
+**To set a base price in Modifiers view**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Modifiers**.
+4. Use the [search field](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerSearchingForMenuEntities) or the [filtering controls](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringMenuEntities) to refine the list of modifiers.
+5. To edit a modifier with a base price, enter the new price in the **Price** column.
+6. Continue reading the [Publishing menu manager changes](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html) section to understand how to make your menu changes available to restaurant employees and guests.
+
+   > ❗️ Important
+   >
+   > **Modifiers** view offers additional workflows for saving and publishing your pricing edits that are different from other configuration pages in Toast Web, including the ability to create a change set that saves and publishes your changes at a later date and time. In the menu manager, you *either* select **Schedule** to create a change set *or* **Save** to save your changes immediately but you don't do both. If you select **Save**, your changes will be saved immediately and you will not be able to create a change set. Do not select **Save** in the menu manager until you fully understand the publishing workflows described in [Publishing menu manager changes](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html).
+
+#### Individually-priced modifiers that use advanced pricing strategies
+
+Using a modifier's classic [item reference page](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager), you can specify advanced pricing strategies for the modifier, including [size](https://doc.toasttab.com/doc/platformguide/adminSizePrice.html#adminConfiguringSizePricingOnModifierGroupsAndModifierOptions), [menu-specific](https://doc.toasttab.com/doc/platformguide/adminMenuSpecificPrice.html), [location-specific](https://doc.toasttab.com/doc/platformguide/adminLocationSpecificPriceOverview.html), [time-specific](https://doc.toasttab.com/doc/platformguide/adminTimeSpecificPrice.html), and [open](https://doc.toasttab.com/doc/platformguide/adminOpenPrice.html) prices.
+
+The menu manager provides partial support for editing advanced prices on modifiers, allowing you to edit size, menu-specific, and location-specific prices in the **Price** column of **Modifiers** view.
+
+In **Full menu** view, the **Modifiers** table in the modifier group side pane and the **Edit modifier** dialog do not support editing advanced prices. For modifiers that use advanced prices, you see the name of the pricing strategy and the price range but you cannot edit the price.
+
+For multi-location restaurants:
+
+- If the modifier uses a location-specific price, only the pricing strategy is displayed in the **Modifiers** table and the **Edit modifier** dialog in **Full menu** view. The price range is not displayed. You must view the prices in **Modifiers** view.
+
+**To edit an advanced price for a modifier in Modifiers view**
+
+1. [Access Toast Web](https://doc.toasttab.com/doc/platformguide/adminAccessToastAdminBackend.html).
+2. Choose **Menus > Menu management > Menu manager** to open the **Menu manager** page.
+3. From the **Show** section, choose **Modifiers**.
+4. Use the [search field](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerSearchingForMenuEntities) or the [filtering controls](https://doc.toasttab.com/doc/platformguide/platformMenuManagerUsingSearchAndFilteringToFindMenuEntities.html#platformMenuManagerFilteringMenuEntities) to refine the list of modifiers.
+5. To edit a modifier with a size, menu-specific, or location-specific price, expand its row and enter the new prices in the **Price** column.
+
+   > 📘 Note
+   >
+   > The menu manager only allows you to edit size prices that are already defined on a modifier's [classic details page](https://doc.toasttab.com/doc/platformguide/adminMenuManagerAndTheClassicMenuDetailsPages.html). If you need to add a price for another size, you must add the size's price on the classic details page first, before it is visible and available for editing on the **Menu manager** page. The same is true for menu-specific and location-specific prices. If you need to add a price for another menu or location, you must add the price on the classic details page first. For more information on adding size prices, see [Configuring size pricing on modifier groups and modifiers](https://doc.toasttab.com/doc/platformguide/adminSizePrice.html#adminConfiguringSizePricingOnModifierGroupsAndModifierOptions). For more information on adding menu-specific prices, see [Menu-specific price](https://doc.toasttab.com/doc/platformguide/adminMenuSpecificPrice.html). For more information on adding location-specific prices, see [Enabling and setting location-specific prices](https://doc.toasttab.com/doc/platformguide/adminEnablingAndSettingLocationSpecificPrices.html).
+
+   > 📘 Note
+   >
+   > If a modifier is versioned, all of its versions that use location-specific pricing use the *same location-specific prices*. In this situation, the versioned modifier appears on multiple rows on the **Modifiers** view, one row per version, and the location-specific prices associated with the versions are identical. If you edit the location-specific prices for one version, they are edited for all versions. For more information, see [Location-specific prices and versions](https://doc.toasttab.com/doc/platformguide/adminLocationSpecificPricesAndVersions.html).
+6. Continue reading the [Publishing menu manager changes](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html) section to understand how to make your menu changes available to restaurant employees and guests.
+
+   > ❗️ Important
+   >
+   > **Modifiers** view offers additional workflows for saving and publishing your pricing edits that are different from other configuration pages in Toast Web, including the ability to create a change set that saves and publishes your changes at a later date and time. In the menu manager, you *either* select **Schedule** to create a change set *or* **Save** to save your changes immediately but you don't do both. If you select **Save**, your changes will be saved immediately and you will not be able to create a change set. Do not select **Save** in the menu manager until you fully understand the publishing workflows described in [Publishing menu manager changes](https://doc.toasttab.com/doc/platformguide/platformPublishingMenuManagerChanges.html).
+
+#### Modifiers that use override prices
+
+When a modifier is based on an existing menu item, you can choose to use the price of the underlying menu item as the price of the modifier, or you can override that price with a price that is specific to the modifier. For example, the price of the Fries menu item could be $8 while the override price of the Fries modifier is $5.
+
+Override prices are always base prices. In **Full menu** view, override price appears in the **Modifiers** table of the modifier group side pane, in the **Price** field of the **Edit modifier** dialog. They also appear in the **Price** column of **Modifiers** view. If you edit an override price in any of those locations, it has no effect on the item price, only the modifier override price is affected. For more information on setting override prices, see [Understanding a modifier item reference](https://doc.toasttab.com/doc/platformguide/platformWorkingWithModifiersMenuManager.html#platformUnderstandingAModifierItemReferenceMenuManager).
+
+To create override prices, you need the **4. Restaurant Admin > 4.5 Edit Full Menu** permission. Employees with the **4. Restaurant Admin > 4.14 Local Menu Edit** permission can edit override prices in the **Price** column of **Modifiers** view.
+
+### Refreshing a modifier's stock automatically
+
+You can create stock refresh schedules that automatically refresh a modifier's stock status and quantity (count) on a defined schedule.
+
+You can set the modifier so that its stock status refreshes to **In stock** or to a specific stock quantity. If your organization has multiple locations, all stock refresh updates are made in each location's local time.
+
+For detailed information, see [Refreshing a menu item or modifier's stock automatically](https://doc.toasttab.com/doc/platformguide/platformMenuManagerWorkingWithMenuItems.html#platformRefreshingAMenuItemsStockAutomatically).
+
+### Viewing read-only modifier information
+
+The **Modifiers** view of the menu manager provides additional read-only information about modifiers. For example, the **Found in** column displays information about where a modifier appears in the menu hierarchy. For more information, see [Items and modifiers view](https://doc.toasttab.com/doc/platformguide/platformColumnsInTheMenuManagerViews.html#platformMenuManagerItemAndModifierColumns).
