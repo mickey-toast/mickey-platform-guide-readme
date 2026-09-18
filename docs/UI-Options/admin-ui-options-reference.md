@@ -17,15 +17,6 @@ When applying these settings to multiple locations, you can select locations for
 
 For settings where you can select more than one option or uses a custom field, you create a set of options that can then be applied to locations. Add a new entry, modify the entry in the dialog that appears, and then select locations.
 
-<br />
-
-```mermaid
-flowchart LR 
- A --- B[fa:fa-spinner B] 
- B --> C[fa:fa-check C] 
- B --> D[fa:fa-ban D]
-```
-
 ### Login screen
 
 The following table provides information about the settings of the **Login screen** section on the **Front of house > Order screen setup > UI options** page.
