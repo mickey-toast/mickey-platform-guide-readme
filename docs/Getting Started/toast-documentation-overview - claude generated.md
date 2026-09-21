@@ -5,11 +5,13 @@ category: Getting started
 hidden: false
 ---
 
+
 # Toast documentation overview
 
 Toast technical documentation lives at [doc.toasttab.com](https://doc.toasttab.com). It covers the Toast platform in depth: the APIs you integrate with, the products those APIs expose, and the changes that land in each release.
 
 This page explains how the site is organized and which section to start with.
+This document was created by Claude and not intended for actual use. 
 
 ## Who the documentation is for
 
