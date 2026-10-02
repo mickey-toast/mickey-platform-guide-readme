@@ -12,7 +12,7 @@ metadata:
     maximum number of items to…
 ---
 
-A bulk discount applies a discount multiple times to eligible items on the check. As part of the configuration, you must specify the minimum and maximum number of items to which the discount can be applied.
+A bulk discount applies a discount multiple times to eligible items on the check. As part of the configuration, you must specify the minimum and maximum number of items to which the discount can be applied. Bulk discounts allow you to bulk discounts. 
 
 For example, you can create a check-level discount that applies a 20% bulk discount to a minimum of two garden salads and a maximum of four garden salads on the check. The application rules for this sample bulk discount are the following:
 
